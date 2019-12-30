@@ -21,9 +21,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             dataStore.getBookImages {
                 self.collectionView.reloadSections(IndexSet(integer: 0))
             }
-        tabBar.items?.append(UITabBarItem(title: "Music Video", image: nil, selectedImage: nil))
-        tabBar.items?.append(UITabBarItem(title: "Movie", image: nil, selectedImage: nil))
-        tabBar.items?.append(UITabBarItem(title: "Apps", image: nil, selectedImage: nil))
+        tabBar.items?.append(UITabBarItem(title: "Music Video", image: UIImage(named: "video"), selectedImage: nil))
+        tabBar.items?.append(UITabBarItem(title: "Movie", image: UIImage(named: "playbutton"), selectedImage: nil))
+        tabBar.items?.append(UITabBarItem(title: "Apps", image: UIImage(named: "mobile"), selectedImage: nil))
        }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

@@ -73,8 +73,8 @@
                                 <rect key="frame" x="0.0" y="802" width="414" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
-                                    <tabBarItem title="Book" id="u0s-k9-yCD"/>
-                                    <tabBarItem title="Music" id="0rx-n6-Bh3"/>
+                                    <tabBarItem title="Book" image="book" id="u0s-k9-yCD"/>
+                                    <tabBarItem title="Music" image="music" id="0rx-n6-Bh3"/>
                                 </items>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="1eK-1s-Bro"/>
@@ -104,4 +104,8 @@
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="book" width="24" height="24"/>
+        <image name="music" width="24" height="24"/>
+    </resources>
 </document>
