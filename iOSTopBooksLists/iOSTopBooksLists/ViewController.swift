@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource{
+class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UITabBarDelegate{
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tabBar: UITabBar!
@@ -21,8 +21,10 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             dataStore.getBookImages {
                 self.collectionView.reloadSections(IndexSet(integer: 0))
             }
+        tabBar.items?.append(UITabBarItem(title: "Music Video", image: nil, selectedImage: nil))
+        tabBar.items?.append(UITabBarItem(title: "Movie", image: nil, selectedImage: nil))
+        tabBar.items?.append(UITabBarItem(title: "Apps", image: nil, selectedImage: nil))
        }
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dataStore.audioBooks.count
@@ -35,7 +37,25 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         return item
     }
    
-
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        dataStore.audioBooks.removeAll()
+        dataStore.images.removeAll()
+        switch item.title {
+        case "Music Video":
+            APIClient.urlString = Constants.MUSIC_VIDEO_API_LINK
+        case "Movie":
+            APIClient.urlString = Constants.MOVIE_API_LINK
+        case "Apps":
+            APIClient.urlString = Constants.APP_API_LINK
+        case "Music":
+            APIClient.urlString = Constants.MUSIC_API_LINK
+        default:
+            break
+        }
+        dataStore.getBookImages {
+            self.collectionView.reloadSections(IndexSet(integer: 0))
+        }
+    }
 
 }
 

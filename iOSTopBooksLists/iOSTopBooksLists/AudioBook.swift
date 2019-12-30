@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct     AudioBook {
+struct  AudioBook {
     let name : String
     let author : String
     let coverImage : String
@@ -21,8 +21,10 @@ struct     AudioBook {
 }
 
 struct APIClient {
+    
+    static var urlString : String = Constants.BOOK_API_LINK
     static func getAudioBooksApi(completion: @escaping ([String:Any]?) -> Void){
-        let url = URL(string: "https://rss.itunes.apple.com/api/v1/us/books/top-free/all/10/explicit.json")
+        let  url = URL(string: urlString)
         let session = URLSession.shared
         guard let unwrappedURL = url else {  print("Error unwrapping urls.");  return }
         let dataTask = session.dataTask(with: unwrappedURL) { (data, response, error) in
