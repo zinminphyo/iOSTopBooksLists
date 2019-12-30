@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iOSTopBooksLists" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YAj-vq-BWM">
+                                <rect key="frame" x="0.0" y="44" width="414" height="758"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="0.0" id="FSE-gx-j05">
+                                    <size key="itemSize" width="185" height="225"/>
+                                    <size key="estimatedItemSize" width="185" height="225"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="2" minY="2" maxX="2" maxY="2"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="item1" reuseIdentifier="item1" id="8dh-mk-Csg" customClass="ItemCollectionViewCell" customModule="iOSTopBooksLists" customModuleProvider="target">
+                                        <rect key="frame" x="2" y="2" width="185" height="225"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="n0C-I6-OCZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="185" height="225"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1KT-tq-L9L">
+                                                    <rect key="frame" x="13" y="49" width="159" height="127.5"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JPE-uV-9KU">
+                                                            <rect key="frame" x="24" y="0.0" width="111" height="99"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBb-Kp-JU4">
+                                                            <rect key="frame" x="58.5" y="107" width="42" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="JPE-uV-9KU" firstAttribute="width" secondItem="1KT-tq-L9L" secondAttribute="width" multiplier="0.7" id="Ue0-Oj-v49"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1KT-tq-L9L" firstAttribute="centerY" secondItem="n0C-I6-OCZ" secondAttribute="centerY" id="NXM-07-ZE3"/>
+                                                <constraint firstItem="1KT-tq-L9L" firstAttribute="centerX" secondItem="n0C-I6-OCZ" secondAttribute="centerX" id="QIa-FD-bLt"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="185" height="225"/>
+                                        <connections>
+                                            <outlet property="bookImage" destination="JPE-uV-9KU" id="798-w0-4hX"/>
+                                            <outlet property="bookLabel" destination="wBb-Kp-JU4" id="dLM-fO-TJk"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="dp4-QV-3LW"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="KxB-ih-tb6"/>
+                                </connections>
+                            </collectionView>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5x5-jn-mDV">
+                                <rect key="frame" x="0.0" y="802" width="414" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem systemItem="favorites" id="u0s-k9-yCD"/>
+                                    <tabBarItem title="Item" id="AM0-3q-McX"/>
+                                    <tabBarItem title="Item" id="cvs-08-Ioq"/>
+                                    <tabBarItem systemItem="more" id="Xw3-fS-Utv"/>
+                                </items>
+                            </tabBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="YAj-vq-BWM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3E7-8F-T89"/>
+                            <constraint firstItem="5x5-jn-mDV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Bfp-5X-Wri"/>
+                            <constraint firstItem="YAj-vq-BWM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="F5n-mq-1HM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YAj-vq-BWM" secondAttribute="bottom" constant="60" id="JQG-mN-9DR"/>
+                            <constraint firstItem="5x5-jn-mDV" firstAttribute="top" secondItem="YAj-vq-BWM" secondAttribute="bottom" id="PTg-s6-Lvq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YAj-vq-BWM" secondAttribute="trailing" id="PX2-yh-PPe"/>
+                            <constraint firstItem="5x5-jn-mDV" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="e3E-av-8Tc"/>
+                            <constraint firstItem="5x5-jn-mDV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xRr-3G-flR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="YAj-vq-BWM" id="DP0-gq-gct"/>
+                        <outlet property="tabBar" destination="5x5-jn-mDV" id="YOT-gO-hLJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+</document>
