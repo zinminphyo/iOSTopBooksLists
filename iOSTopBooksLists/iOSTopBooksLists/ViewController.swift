@@ -20,6 +20,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     override func viewDidLoad() {
            super.viewDidLoad()
         reloadingIndicator.isHidden = false
+        reloadingIndicator.startAnimating()
+        loadinIndicatorPosition()
         dataStore.getBookImages {
              self.collectionView.reloadSections(IndexSet(integer: 0))
             }
@@ -65,6 +67,29 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         self.collectionView.isHidden = false
         self.collectionView.reloadSections(IndexSet(integer: 0))
        }
+    }
+    
+    func loadinIndicatorPosition() {
+        reloadingIndicator.isHidden = true
+        reloadingIndicator.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(reloadingIndicator)
+
+        // Auto layout
+        let horizontalConstraint = NSLayoutConstraint(item: reloadingIndicator as Any,
+                                                      attribute: .centerX,
+                                                      relatedBy: .equal,
+                                                      toItem: self.view,
+                                                      attribute: .centerX,
+                                                      multiplier: 1,
+                                                      constant: 0)
+        let verticalConstraint = NSLayoutConstraint(item: reloadingIndicator as Any,
+                                                    attribute: .centerY,
+                                                    relatedBy: .equal,
+                                                    toItem: self.view,
+                                                    attribute: .centerY,
+                                                    multiplier: 1,
+                                                    constant: 0)
+        NSLayoutConstraint.activate([horizontalConstraint, verticalConstraint])
     }
 
 }
