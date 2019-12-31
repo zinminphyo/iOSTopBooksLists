@@ -12,19 +12,22 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tabBar: UITabBar!
+    @IBOutlet weak var reloadingIndicator: UIActivityIndicatorView!
     
     let dataStore = DataStore.shareInstance
     var selectCell : ItemCollectionViewCell?
     
     override func viewDidLoad() {
            super.viewDidLoad()
-            dataStore.getBookImages {
-                self.collectionView.reloadSections(IndexSet(integer: 0))
+        reloadingIndicator.isHidden = false
+        dataStore.getBookImages {
+             self.collectionView.reloadSections(IndexSet(integer: 0))
             }
         tabBar.items?.append(UITabBarItem(title: "Music Video", image: UIImage(named: "video"), selectedImage: nil))
         tabBar.items?.append(UITabBarItem(title: "Movie", image: UIImage(named: "playbutton"), selectedImage: nil))
         tabBar.items?.append(UITabBarItem(title: "Apps", image: UIImage(named: "mobile"), selectedImage: nil))
        }
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dataStore.audioBooks.count
@@ -38,7 +41,10 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     }
    
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        reloadingIndicator.isHidden = false
+        reloadingIndicator.startAnimating()
         dataStore.audioBooks.removeAll()
+        collectionView.isHidden = true
         dataStore.images.removeAll()
         switch item.title {
         case "Music Video":
@@ -50,11 +56,15 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         case "Music":
             APIClient.urlString = Constants.MUSIC_API_LINK
         default:
-            break
+            APIClient.urlString = Constants.BOOK_API_LINK
         }
-        dataStore.getBookImages {
-            self.collectionView.reloadSections(IndexSet(integer: 0))
-        }
+       dataStore.getBookImages {
+        self.collectionView.reloadData()
+        self.reloadingIndicator.stopAnimating()
+        self.reloadingIndicator.isHidden = true
+        self.collectionView.isHidden = false
+        self.collectionView.reloadSections(IndexSet(integer: 0))
+       }
     }
 
 }

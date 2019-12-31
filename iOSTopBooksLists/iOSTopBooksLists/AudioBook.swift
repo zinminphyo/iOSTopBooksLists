@@ -21,7 +21,6 @@ struct  AudioBook {
 }
 
 struct APIClient {
-    
     static var urlString : String = Constants.BOOK_API_LINK
     static func getAudioBooksApi(completion: @escaping ([String:Any]?) -> Void){
         let  url = URL(string: urlString)

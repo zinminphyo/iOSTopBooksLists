@@ -16,6 +16,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="lu5-G4-w7o">
+                                <rect key="frame" x="0.0" y="69" width="414" height="758"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YAj-vq-BWM">
                                 <rect key="frame" x="0.0" y="44" width="414" height="758"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -96,6 +100,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="YAj-vq-BWM" id="DP0-gq-gct"/>
+                        <outlet property="reloadingIndicator" destination="lu5-G4-w7o" id="Kex-6J-pSz"/>
                         <outlet property="tabBar" destination="5x5-jn-mDV" id="YOT-gO-hLJ"/>
                     </connections>
                 </viewController>
