@@ -18,7 +18,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     var selectCell : ItemCollectionViewCell?
     
     override func viewDidLoad() {
-           super.viewDidLoad()
+        super.viewDidLoad()
+    
         reloadingIndicator.isHidden = false
         reloadingIndicator.startAnimating()
         loadinIndicatorPosition()

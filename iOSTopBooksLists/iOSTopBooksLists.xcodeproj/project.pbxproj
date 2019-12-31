@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		82DC41DF23BA5A7D00F06682 /* iOSTopBooksLists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTopBooksLists.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		82DC41DF23BA5A7D00F06682 /* iTunesTopLists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesTopLists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82DC41E223BA5A7D00F06682 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82DC41E423BA5A7D00F06682 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		82DC41E623BA5A7D00F06682 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 		82DC41E023BA5A7D00F06682 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				82DC41DF23BA5A7D00F06682 /* iOSTopBooksLists.app */,
+				82DC41DF23BA5A7D00F06682 /* iTunesTopLists.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,7 +96,7 @@
 			);
 			name = iOSTopBooksLists;
 			productName = iOSTopBooksLists;
-			productReference = 82DC41DF23BA5A7D00F06682 /* iOSTopBooksLists.app */;
+			productReference = 82DC41DF23BA5A7D00F06682 /* iTunesTopLists.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -309,7 +309,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.padc.iOSTopBooksLists;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iTunesTopLists;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -328,7 +328,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.padc.iOSTopBooksLists;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iTunesTopLists;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
